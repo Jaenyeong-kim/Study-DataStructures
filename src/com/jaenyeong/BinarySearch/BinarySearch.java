@@ -5,13 +5,12 @@ public class BinarySearch {
     public BinarySearch() {
     }
 
-    int search(int array[], int target) {
+    public int search(int array[], int target) {
         int first = 0;
         int last = array.length - 1;
         int middle;
 
         while (first <= last) {
-
             middle = (first + last) / 2;
 
             if (array[middle] == target) {
@@ -24,5 +23,4 @@ public class BinarySearch {
         }
         return -1;
     }
-
 }
