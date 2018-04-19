@@ -1,4 +1,4 @@
-package com.jaenyeong.Factorial;
+package com.jaenyeong.Recursion.Factorial;
 
 public class Factorial {
 

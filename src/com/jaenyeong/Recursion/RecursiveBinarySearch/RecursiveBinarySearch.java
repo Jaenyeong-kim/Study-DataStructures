@@ -1,4 +1,4 @@
-package com.jaenyeong.RecursiveBinarySearch;
+package com.jaenyeong.Recursion.RecursiveBinarySearch;
 
 public class RecursiveBinarySearch {
 

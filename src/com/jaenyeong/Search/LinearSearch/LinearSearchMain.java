@@ -1,4 +1,4 @@
-package com.jaenyeong.LinearSearch;
+package com.jaenyeong.Search.LinearSearch;
 
 public class LinearSearchMain {
     public static void main(String[] args) {

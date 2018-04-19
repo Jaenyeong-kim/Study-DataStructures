@@ -1,4 +1,4 @@
-package com.jaenyeong.BinarySearch;
+package com.jaenyeong.Search.BinarySearch;
 
 public class BinarySearch {
 

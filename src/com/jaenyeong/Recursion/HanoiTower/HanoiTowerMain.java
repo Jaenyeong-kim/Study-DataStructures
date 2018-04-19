@@ -1,4 +1,4 @@
-package com.jaenyeong.HanoiTower;
+package com.jaenyeong.Recursion.HanoiTower;
 
 public class HanoiTowerMain {
 

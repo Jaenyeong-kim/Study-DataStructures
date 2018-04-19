@@ -1,4 +1,4 @@
-package com.jaenyeong.Fibonacci;
+package com.jaenyeong.Recursion.Fibonacci;
 
 public class Fibonacci {
 

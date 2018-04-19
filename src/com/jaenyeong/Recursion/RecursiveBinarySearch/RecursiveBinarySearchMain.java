@@ -1,14 +1,14 @@
-package com.jaenyeong.BinarySearch;
+package com.jaenyeong.Recursion.RecursiveBinarySearch;
 
-public class BinarySearchMain {
+public class RecursiveBinarySearchMain {
 
     public static void main(String[] args) {
+        RecursiveBinarySearch recursiveBinarySearch = new RecursiveBinarySearch();
+
         int array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int resultIndex;
 
-        BinarySearch binarySearch = new BinarySearch();
-
-        resultIndex = binarySearch.search(array, 2);
+        resultIndex = recursiveBinarySearch.binarySearch(array, 0, array.length - 1, 8);
 
         if (resultIndex >= 0) {
             System.out.println(resultIndex + "번째 타겟 있음");
