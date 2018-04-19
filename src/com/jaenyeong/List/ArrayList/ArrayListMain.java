@@ -36,6 +36,14 @@ public class ArrayListMain {
                 }
             }
         }
+
+        if (arrayList.getFirstData(resultData)) {
+            System.out.println(resultData.getResultData());
+
+            while (arrayList.getNextData(resultData)) {
+                System.out.println(resultData.getResultData());
+            }
+        }
     }
 }
 

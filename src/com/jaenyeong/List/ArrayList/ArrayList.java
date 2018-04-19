@@ -35,7 +35,6 @@ public class ArrayList {
             return;
         }
         this.array[this.numOfData] = insertData;
-//        System.out.println(this.array[this.numOfData]);
         this.numOfData++;
     }
 
