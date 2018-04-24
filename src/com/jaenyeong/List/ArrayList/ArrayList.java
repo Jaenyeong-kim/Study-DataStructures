@@ -1,7 +1,9 @@
 package com.jaenyeong.List.ArrayList;
 
+import com.jaenyeong.List.ResultData;
+
 public class ArrayList {
-    private String array[] = new String[100];
+    private Object array[] = new Object[100];
     private int numOfData;
     private int curPosition;
 
@@ -10,7 +12,7 @@ public class ArrayList {
         this.curPosition = -1;
     }
 
-    public boolean getFirstData(ResultData resultData) {
+    boolean getFirstData(ResultData resultData) {
         if (this.numOfData == 0) {
             System.out.println("데이터 없음");
             return false;
@@ -20,7 +22,7 @@ public class ArrayList {
         return true;
     }
 
-    public boolean getNextData(ResultData resultData) {
+    boolean getNextData(ResultData resultData) {
         if (this.curPosition >= this.numOfData - 1) {
             return false;
         }
@@ -29,7 +31,7 @@ public class ArrayList {
         return true;
     }
 
-    public void insert(String insertData) {
+    void insert(String insertData) {
         if (this.numOfData >= this.array.length) {
             System.out.println("배열 초과. 데이터 삽입 불가");
             return;
@@ -38,8 +40,8 @@ public class ArrayList {
         this.numOfData++;
     }
 
-    public String remove() {
-        String removeData = this.array[this.curPosition];
+    Object remove() {
+        Object removeData = this.array[this.curPosition];
 
         for (int i = this.curPosition; i < this.numOfData; i++) {
             this.array[i] = this.array[i + 1];
@@ -50,8 +52,7 @@ public class ArrayList {
         return removeData;
     }
 
-    public int getNumOfData() {
+    int size() {
         return this.numOfData;
     }
-
 }
