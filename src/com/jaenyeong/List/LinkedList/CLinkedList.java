@@ -2,30 +2,28 @@ package com.jaenyeong.List.LinkedList;
 
 import com.jaenyeong.List.ResultData;
 
-public class LinkedList {
-    Node head = new Node();
+public class CLinkedList {
+    Node tail = null;
     Node current = null;
     Node before = null;
     int numOfData = 0;
-    SetSortRule setSortRule;
 
-    public LinkedList() {
-        this.head.nextNode = null;
+    public CLinkedList() {
     }
 
     boolean getFirstData(ResultData resultData) {
-        if (this.head == null) {
+        if (this.tail == null) {
             return false;
         }
 
-        this.before = this.head;
-        this.current = this.head.nextNode;
+        this.before = this.tail;
+        this.current = this.tail.nextNode;
         resultData.setResultData(this.current.data);
         return true;
     }
 
     boolean getNextData(ResultData resultData) {
-        if (this.current.nextNode == null) {
+        if (this.tail == null) {
             return false;
         }
 
@@ -36,40 +34,49 @@ public class LinkedList {
     }
 
     void insert(Object inputData) {
-        if (this.setSortRule == null) {
-            this.fInsert(inputData);
-        } else {
-            this.sInsert(inputData);
-        }
-    }
-
-    private void fInsert(Object inputData) {
         Node newNode = new Node();
         newNode.data = inputData;
 
-        newNode.nextNode = this.head.nextNode;
-        this.head.nextNode = newNode;
+        if (this.tail == null) {
+            this.tail = newNode;
+            newNode.nextNode = newNode;
+        } else {
+            newNode.nextNode = this.tail.nextNode;
+            this.tail.nextNode = newNode;
+            this.tail = newNode;
+        }
 
         this.numOfData++;
     }
 
-    private void sInsert(Object inputData) {
+    void insertFront(Object inputData) {
         Node newNode = new Node();
-        Node preNode = this.head;
         newNode.data = inputData;
 
-        while (preNode.nextNode != null && this.setSortRule.sort((int)inputData, (int)preNode.nextNode.data) != 0) {
-            preNode = preNode.nextNode;
+        if (this.tail == null) {
+            this.tail = newNode;
+            newNode.nextNode = newNode;
+        } else {
+            newNode.nextNode = this.tail.nextNode;
+            this.tail.nextNode = newNode;
         }
-
-        newNode.nextNode = preNode.nextNode;
-        preNode.nextNode = newNode;
 
         this.numOfData++;
     }
 
     Object remove() {
+
         Node removeNode = this.current;
+
+        if (removeNode == this.tail) {
+
+            if (this.tail == this.tail.nextNode) {
+                this.tail = null;
+            } else {
+                this.tail = this.before;
+            }
+        }
+
         this.before.nextNode = this.current.nextNode;
         this.current = this.before;
         this.numOfData--;
@@ -80,7 +87,4 @@ public class LinkedList {
         return this.numOfData;
     }
 
-    void setSortRule(SetSortRule setSortRule) {
-        this.setSortRule = setSortRule;
-    }
 }
