@@ -2,13 +2,13 @@ package com.jaenyeong.List.LinkedList;
 
 import com.jaenyeong.List.ResultData;
 
-public class CLinkedList {
+public class CircularLinkedList {
     Node tail = null;
     Node current = null;
     Node before = null;
     int numOfData = 0;
 
-    public CLinkedList() {
+    public CircularLinkedList() {
     }
 
     boolean getFirstData(ResultData resultData) {

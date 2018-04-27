@@ -2,10 +2,10 @@ package com.jaenyeong.List.LinkedList;
 
 import com.jaenyeong.List.ResultData;
 
-public class CLinkedListMain {
+public class CircularLinkedListMain {
 
     public static void main(String[] args) {
-        CLinkedList cLinkedList = new CLinkedList();
+        CircularLinkedList cLinkedList = new CircularLinkedList();
         ResultData resultData = new ResultData("");
 
         cLinkedList.insert(3);
@@ -29,14 +29,14 @@ public class CLinkedListMain {
         if (nodeCnt != 0) {
             cLinkedList.getFirstData(resultData);
 
-            if ((int)(resultData.getResultData()) %2 == 0) {
+            if ((int) (resultData.getResultData()) % 2 == 0) {
                 System.out.println("%2 삭제");
                 cLinkedList.remove();
             }
 
-            for (int i = 0; i < nodeCnt-1; i++) {
+            for (int i = 0; i < nodeCnt - 1; i++) {
                 cLinkedList.getNextData(resultData);
-                if ((int)(resultData.getResultData()) %2 == 0) {
+                if ((int) (resultData.getResultData()) % 2 == 0) {
                     System.out.println("%2 삭제");
                     cLinkedList.remove();
                 }
@@ -46,7 +46,7 @@ public class CLinkedListMain {
         if (cLinkedList.getFirstData(resultData)) {
             System.out.println(resultData.getResultData());
 
-            for (int i = 0; i < cLinkedList.size()-1; i++) {
+            for (int i = 0; i < cLinkedList.size() - 1; i++) {
                 if (cLinkedList.getNextData(resultData)) {
                     System.out.println(resultData.getResultData());
                 }
