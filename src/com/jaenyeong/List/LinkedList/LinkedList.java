@@ -14,7 +14,7 @@ public class LinkedList {
     }
 
     boolean getFirstData(ResultData resultData) {
-        if (this.head == null) {
+        if (this.head.nextNode == null) {
             return false;
         }
 
